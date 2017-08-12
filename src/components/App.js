@@ -10,6 +10,7 @@ import {
 import Navigation from './Navbar'
 import './App.css';
 import Homepage from './Homepage'
+import creatingaccount from './CreatingAccount'
 
 class App extends React.Component {
   render() {
@@ -20,6 +21,7 @@ class App extends React.Component {
 
             <div className="white">
               <Route exact path="/" component={Homepage}/>
+                <Route path="creatingaccount" component={creatingaccount}/>
             </div>
           </Grid>
         </Router>
