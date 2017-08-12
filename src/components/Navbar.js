@@ -4,8 +4,8 @@ import {
     Button,
     FormGroup,
     FormControl
-
 } from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 
 
 
@@ -15,7 +15,7 @@ export default class Navigation extends React.Component {
             <Navbar>
                 <Navbar.Header>
                     <Navbar.Brand>
-                        <a href="#">Brand</a>
+                        <Link to={'/Homepage'}>Znajdz stażyste</Link>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>
@@ -25,7 +25,7 @@ export default class Navigation extends React.Component {
                             <FormControl type="text" placeholder="Znajdz swojego stażyste" />
                         </FormGroup>
                         {' '}
-                        <Button type="submit">Submit</Button>
+                        <Button type="submit">Szukaj</Button>
                     </Navbar.Form>
                 </Navbar.Collapse>
             </Navbar>
