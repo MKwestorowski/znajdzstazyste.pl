@@ -20,8 +20,8 @@ class App extends React.Component {
             <Navigation/>
 
             <div className="white">
-              <Route exact path="/" component={Homepage}/>
-                <Route path="creatingaccount" component={creatingaccount}/>
+              {/*<Route exact path="/" component={Homepage}/>*/}
+                {/*<Route path="/creatingaccount" component={creatingaccount}/>*/}
             </div>
           </Grid>
         </Router>

@@ -3,7 +3,7 @@ import {
     Navbar,
     Button,
     FormGroup,
-    FormControl
+    FormControl,
 } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 
@@ -27,9 +27,7 @@ export default class Navigation extends React.Component {
                         {' '}
                         <Button type="submit">Szukaj</Button>
                     </Navbar.Form>
-                    <Navbar.text>
-                        <Link to={'creatingaccount'}>Zaloguj się!</Link>
-                    </Navbar.text>
+                        <Link to={'/creatingaccount'}>Zaloguj się!</Link>
                 </Navbar.Collapse>
 
             </Navbar>
