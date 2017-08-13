@@ -28,7 +28,7 @@ export default class Navigation extends React.Component {
                         <Button type="submit">Szukaj</Button>
                     </Navbar.Form>
                     <Navbar.text>
-                        <Link to={'creatingaccount'}></Link>
+                        <Link to={'creatingaccount'}>Zaloguj się!</Link>
                     </Navbar.text>
                 </Navbar.Collapse>
 
