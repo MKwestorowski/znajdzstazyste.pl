@@ -21,7 +21,7 @@ class App extends React.Component {
 
             <div className="white">
               {/*<Route exact path="/" component={Homepage}/>*/}
-                {/*<Route path="/creatingaccount" component={creatingaccount}/>*/}
+                <Route path="/creatingaccount" component={creatingaccount}/>
             </div>
           </Grid>
         </Router>
