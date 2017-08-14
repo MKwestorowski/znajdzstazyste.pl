@@ -9,7 +9,7 @@ export default (state = initialState, action) => {
             return {
 
                 ...state,
-                user: action.result.user
+                user: action.result
             }
 
         case 'FACEBOOK_LOGOUT':
