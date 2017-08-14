@@ -7,9 +7,22 @@ import {
 } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 
+export default connect(
+    state => ({
+        memberFetching: state.memberFetching
 
+    }),
+    dispatch => ({
+        success: data => {
+            console.log(data)
+            dispatch({
+                type: 'members/FETCH__SUCCESS',
+                data: data})
+        },
 
-export default class Navigation extends React.Component {
+    })
+)(
+class Navigation extends React.Component {
     render() {
         return(
             <Navbar>
@@ -35,3 +48,4 @@ export default class Navigation extends React.Component {
         )
     }
 }
+)

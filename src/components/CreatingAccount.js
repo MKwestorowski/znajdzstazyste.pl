@@ -1,28 +1,46 @@
 import React from 'react';
-import firebase from 'firebase';
 
 import {provider, auth} from './FirebaseConfig';
 
-export default class extends React.Component {
+export default connect(
+    state => ({
+        user: state.facebookLogin.user
 
-    state = {
-    user: null
-}
+    }),
+    dispatch => ({
+        facebookLogin: event => dispatch({
+            type: 'FACEBOOK__LOGIN',
+            facebook: event
+
+        }),
+        facebookLogout : event => dispatch({
+                    type: 'FACEBOOK_LOGOUT',
+                    facebook: event
+                })
+
+
+
+    })
+
+)(
+    class extends React.Component {
+
 
 
     async login() {
         const result = auth().signInWithPopup(provider)
-        this.setState({user: result.user});
+        return () => result.user
     }
 
     logout() {
+        const result = null
          auth().signOut()
-        this.setState({user: null});
+        return () => result;
     }
 
     render() {
 
-        const user = this.state.user
+        const user = this.props.state.user
         return (
             <div>
                 <p>{user ? `Hi, ${user.displayName}!` : 'Hi!'}</p>
@@ -38,4 +56,5 @@ export default class extends React.Component {
         );
     }
 
-}
+ }
+)
