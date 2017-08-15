@@ -5,7 +5,7 @@ import { provider, auth} from './FirebaseConfig';
 
 export default connect(
     state => ({
-        user: state.facebookLogin
+        user: state.fejsLogin
 
     }),
     dispatch => ({
@@ -29,13 +29,6 @@ export default connect(
 
 
 
-     async login() {
-        const result = auth().signInWithPopup(provider)
-      this.props.fejsLogin(result)
-
-
-
-    }
 
     logout() {
         const result = null
@@ -45,13 +38,13 @@ export default connect(
 
     render() {
 
+         const fejsLogin = this.props.fejsLogin
         const user = this.props.user
-
-
+        const result = auth().signInWithPopup(provider)
         return (
             <div>
                 <p>{user ? `Hi, ${user.displayName}!` : 'Hi!'}</p>
-                <button onClick={this.login.bind(this)}>
+                <button onClick={() => fejsLogin(result)}>
                     Login with Facebook
                 </button>
 

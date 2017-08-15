@@ -9,7 +9,7 @@ export default (state = initialState, action) => {
         case 'FACEBOOK_LOGIN':
             return {
                 ...state,
-                user: 'japczko'
+                user: action
 
             }
 
