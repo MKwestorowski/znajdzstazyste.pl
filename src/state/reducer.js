@@ -1,12 +1,12 @@
-import facebookLogin from './parts/facebookLogin'
+import fejsLogin from './parts/facebookLogin'
 
 
 
 export default (state = {}, action) => {
     return {
 
-        facebookLogin: facebookLogin(state.facebookLogin, action),
-        facebookLogout: facebookLogin(state.facebookLogin, action)
+        fejsLogin: fejsLogin(state.fejsLogin, action),
+        fejsLogout: fejsLogin(state.fejsLogout, action)
 
 
     }

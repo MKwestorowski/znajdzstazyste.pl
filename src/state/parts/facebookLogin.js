@@ -4,22 +4,19 @@ const initialState = {
 }
 
 export default (state = initialState, action) => {
-    setTimeout(function () {
-        console.log(action.result)
-    }, 10900)
+    console.log(action)
     switch(action.type) {
-        case 'FACEBOOK__LOGIN':
+        case 'FACEBOOK_LOGIN':
             return {
-
                 ...state,
-                user: action.result
+                user: 'japczko'
 
             }
 
         case 'FACEBOOK_LOGOUT':
             return {
                 ...state,
-                user: action.result
+                user: action
             }
         default:
             return state

@@ -1,7 +1,7 @@
 import React from 'react';
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
-import {provider, auth} from './FirebaseConfig';
+import { provider, auth} from './FirebaseConfig';
 
 export default connect(
     state => ({
@@ -9,12 +9,12 @@ export default connect(
 
     }),
     dispatch => ({
-        facebookLogin: result => dispatch({
-            type: 'FACEBOOK__LOGIN',
+        fejsLogin: result => dispatch({
+            type: 'FACEBOOK_LOGIN',
             facebook: result,
 
         }),
-        facebookLogout : result => dispatch({
+        fejsLogout : result => dispatch({
                     type: 'FACEBOOK_LOGOUT',
                     facebook: result
                 })
@@ -29,10 +29,9 @@ export default connect(
 
 
 
-    async login() {
-        const facebookLogin = this.props.facebookLogin
+     async login() {
         const result = auth().signInWithPopup(provider)
-      facebookLogin(result)
+      this.props.fejsLogin(result)
 
 
 
@@ -41,7 +40,7 @@ export default connect(
     logout() {
         const result = null
          auth().signOut()
-        this.props.facebookLogout(result)
+        this.props.fejsLogout(result)
     }
 
     render() {
