@@ -41,9 +41,10 @@ export default connect(
          const fejsLogin = this.props.fejsLogin
         const user = this.props.user
         const result = auth().signInWithPopup(provider)
+        console.log(user)
         return (
             <div>
-                <p>{user ? `Hi, ${user.displayName}!` : 'Hi!'}</p>
+                <p>{user ? `Hi, ${user.facebook.ya.user.displayName}!` : 'Hi!'}</p>
                 <button onClick={() => fejsLogin(result)}>
                     Login with Facebook
                 </button>
