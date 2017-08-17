@@ -41,10 +41,7 @@ export default connect(
          const fejsLogin = this.props.fejsLogin
         const user = this.props.user
         const result = auth().signInWithPopup(provider)
-        setTimeout(function () {
-            console.log(user.facebook)
 
-        }, 10000)
         return (
             <div>
                 <p>{user ? `Hi, ${user.facebook}!` : 'Hi!'}</p>
